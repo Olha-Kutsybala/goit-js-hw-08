@@ -10,10 +10,10 @@ const localPlayBackTime = localStorage.getItem(playBackTime);
 
 function onPlay(evt) {
   // console.log(evt);
-  localStorage.setItem(playBackTime, timeupdate.seconds);
+  localStorage.setItem(playBackTime, evt.seconds);
 }
 
-player.on('play', throttle(onPlay, 1000));
+player.on('timeupdate', throttle(onPlay, 1000));
 
 player
   .setCurrentTime(localPlayBackTime)
