@@ -11,7 +11,7 @@ form.addEventListener('input', throttle(onFormData, 500));
 
 const formData = {};
 
-// populateForm();
+populateForm();
 
 function onFormData(evt) {
   formData[evt.target.name] = evt.target.value;
@@ -26,7 +26,7 @@ function onFormSubmit(evt) {
 }
 
 function populateForm() {
-    const savedData = localStorage.getItem(LOCALSTORAGE_KEY)
+  const savedData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)); 
   if (savedData) {
     email.value = savedData.email;
     message.value = savedData.message;
