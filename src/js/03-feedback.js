@@ -9,7 +9,7 @@ form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormData, 500));
 
 
-const formData = {};
+const formData =  JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {};
 
 populateForm();
 
